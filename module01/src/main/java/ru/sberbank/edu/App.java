@@ -1,7 +1,9 @@
 package ru.sberbank.edu;
 
 /**
- * Hello world!
+ * Проект для первого домашнего задания Школы Java разработчиков
+ * @author Зайцев Денис Николевич
+ * @version 1.0
  *
  */
 public class App 
