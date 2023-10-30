@@ -12,8 +12,9 @@ import java.io.IOException;
 
 public class SavingToFile implements SaveStatistic {
 
-    String data;
-    String outputFileName;
+   private String data;
+   private String outputFileName;
+   private String result;
     public SavingToFile(String data, String outputFileName){
         this.data = data;
         this.outputFileName = outputFileName;
@@ -23,9 +24,14 @@ public class SavingToFile implements SaveStatistic {
     public void goSave() {
         try (BufferedWriter writerFile = new BufferedWriter(new FileWriter(this.outputFileName))) {
             writerFile.write( this.data );
+            result = "success";
         }
         catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public String getResult(){
+        return this.result;
     }
 }
