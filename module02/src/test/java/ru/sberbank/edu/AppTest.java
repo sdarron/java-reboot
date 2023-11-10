@@ -1,8 +1,11 @@
 package ru.sberbank.edu;
 
+import junit.framework.Assert;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
+
+import java.nio.file.Paths;
 
 /**
  * Unit test for simple App.
@@ -34,5 +37,17 @@ public class AppTest
     public void testApp()
     {
         assertTrue( true );
+    }
+
+    public void testSaveFile() {
+        String fileData = "File name: " + "Test.txt" +
+                "; max line: " + "test test" +
+                "; count space: " + "1" +
+                "; count line: " + "1" + "\n";
+        SavingToFile saveToFile = new SavingToFile( fileData, "FileStatistic.txt");
+        saveToFile.goSave();
+
+        String message = saveToFile.getResult();
+        assertEquals("Test Save File", "success", message);
     }
 }
