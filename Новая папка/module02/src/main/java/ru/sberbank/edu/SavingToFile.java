@@ -32,6 +32,6 @@ public class SavingToFile implements SaveStatistic {
     }
 
     public String getResult(){
-        return result;
+        return this.result;
     }
 }
