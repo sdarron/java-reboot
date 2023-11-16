@@ -1,7 +1,10 @@
 package ru.sberbank.edu;
 
 import java.util.Comparator;
-
+/**
+ *  Класс определяет следующий порядок сравнения:
+ *  Сначала сравниваем по возрастанию четные числа, затем нечетные
+ */
 public class CustomDigitComparator implements Comparator<Integer> {
     @Override
     public int compare(Integer o1, Integer o2) {
@@ -13,5 +16,4 @@ public class CustomDigitComparator implements Comparator<Integer> {
             return o1.compareTo(o2);
         }
     }
-
 }
