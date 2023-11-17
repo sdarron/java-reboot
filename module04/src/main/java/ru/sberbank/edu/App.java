@@ -1,6 +1,8 @@
 package ru.sberbank.edu;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 /**
  * Проект для домашнего задания #4 Школы Java разработчиков
@@ -13,5 +15,15 @@ public class App
         Integer[] numbers = {15,2,65,21, 8, 9, 4};
         Arrays.sort(numbers, new CustomDigitComparator());
         System.out.println(Arrays.toString(numbers));
+
+        ArrayList<Person> persons = new ArrayList<>();
+        persons.add(new Person( "Anna", "Moscow", 15));
+        persons.add(new Person( "Anna", "Moscow", 15));
+        persons.add(new Person( "Anna", "Moscow", 15));
+        persons.add(new Person( "Anna", "Moscow", 15));
+        persons.add(new Person( "Anna", "Moscow", 15));
+
+        Collections.sort(persons);
+        System.out.println(persons);
     }
 }

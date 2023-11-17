@@ -7,6 +7,12 @@ public class Person implements Comparable<Person>{
     String city;
     Integer age;
 
+    Person(String name, String city, Integer age){
+       this.name = name;
+       this.city = city;
+       this.age = age;
+    }
+
 
     public String getCity() {
         return city;
@@ -51,6 +57,10 @@ public class Person implements Comparable<Person>{
 
     @Override
     public int compareTo(Person o) {
+        if (!this.city.equalsIgnoreCase(o.city))
+            return this.city.compareTo(o.city);
+        if (!this.name.equalsIgnoreCase(o.name))
+            return this.name.compareTo(o.name);
         return 0;
     }
 
