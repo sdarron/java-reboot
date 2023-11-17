@@ -17,11 +17,11 @@ public class App
         System.out.println(Arrays.toString(numbers));
 
         ArrayList<Person> persons = new ArrayList<>();
+        persons.add(new Person( "Masha", "Rostov", 15));
+        persons.add(new Person( "Irina", "Moscow", 15));
         persons.add(new Person( "Anna", "Moscow", 15));
-        persons.add(new Person( "Anna", "Moscow", 15));
-        persons.add(new Person( "Anna", "Moscow", 15));
-        persons.add(new Person( "Anna", "Moscow", 15));
-        persons.add(new Person( "Anna", "Moscow", 15));
+        persons.add(new Person( "Irina","Boston", 15));
+        persons.add(new Person( "Anna", "Boston", 15));
 
         Collections.sort(persons);
         System.out.println(persons);

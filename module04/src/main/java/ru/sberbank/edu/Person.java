@@ -2,6 +2,7 @@ package ru.sberbank.edu;
 
 import java.util.Objects;
 
+
 public class Person implements Comparable<Person>{
     String name;
     String city;
@@ -55,6 +56,9 @@ public class Person implements Comparable<Person>{
         return 31 * name.toUpperCase().hashCode() * city.toUpperCase().hashCode() * age;
     }
 
+    /**
+     *  Сортировка сначала по полю `city`, а затем по полю `name`.
+     */
     @Override
     public int compareTo(Person o) {
         if (!this.city.equalsIgnoreCase(o.city))
