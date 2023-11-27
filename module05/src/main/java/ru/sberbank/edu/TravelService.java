@@ -1,7 +1,13 @@
 package ru.sberbank.edu;
 
+import javax.xml.stream.Location;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 
 /**
  * Travel Service.
@@ -10,6 +16,7 @@ public class TravelService {
 
     // do not change type
     private final List<CityInfo> cities = new ArrayList<>();
+    public final static double AVERAGE_RADIUS_OF_EARTH_KM = 6371;
 
     /**
      * Append city info.
@@ -18,7 +25,10 @@ public class TravelService {
      * @throws IllegalArgumentException if city already exists
      */
     public void add(CityInfo cityInfo) {
-        // do something
+       boolean rez =  cities.add(cityInfo);
+        if (rez = false) {
+            throw new IllegalArgumentException("City already exists");
+        }
     }
 
     /**
@@ -28,14 +38,22 @@ public class TravelService {
      * @throws IllegalArgumentException if city doesn't exist
      */
     public void remove(String cityName) {
-        // do something
+        cities.remove(cityName);
+        boolean rez;
+        if (rez = false) {
+            throw new IllegalArgumentException("City doesn't exist");
+        }
     }
 
     /**
      * Get cities names.
      */
     public List<String> citiesNames() {
-        return null;
+
+        return cities.stream()
+                .map(CityInfo::getName)
+                .collect(Collectors.toList());
+
     }
 
     /**
@@ -47,7 +65,26 @@ public class TravelService {
      * @throws IllegalArgumentException if source or destination city doesn't exist.
      */
     public int getDistance(String srcCityName, String destCityName) {
-        return 0;
+        List <CityInfo> srcCities = cities.stream()
+                .filter(city -> city.getName().equals(srcCityName))
+                .toList();
+        CityInfo srcCity = srcCities.get(0);
+
+        List <CityInfo> destCities = cities.stream()
+                .filter(city -> city.getName().equals(destCityName))
+                .toList();
+        CityInfo destCity = destCities.get(0);
+
+        double latDistance = srcCity.getPosition().getLatitude() - destCity.getPosition().getLatitude();
+        double lngDistance = srcCity.getPosition().getLongitude() - destCity.getPosition().getLongitude();
+
+        double a = Math.sin(latDistance / 2) * Math.sin(latDistance / 2)
+                + Math.cos(srcCity.getPosition().getLatitude()) * Math.cos(destCity.getPosition().getLatitude())
+                * Math.sin(lngDistance / 2) * Math.sin(lngDistance / 2);
+
+        double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+        return (int) (Math.round(AVERAGE_RADIUS_OF_EARTH_KM * c));
     }
 
     /**
@@ -58,6 +95,11 @@ public class TravelService {
      * @throws IllegalArgumentException if city with cityName city doesn't exist.
      */
     public List<String> getCitiesNear(String cityName, int radius) {
-        return null;
+        List<String> collect = cities.stream()
+                                    .filter( city -> getDistance(cityName, city.getName()) <= radius
+                                             && city.getName() !=  cityName  )
+                                    .map(CityInfo:: getName)
+                                    .collect(Collectors.toList());
+        return collect;
     }
 }

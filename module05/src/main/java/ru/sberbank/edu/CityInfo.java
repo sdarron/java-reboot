@@ -18,4 +18,28 @@ public class CityInfo {
         this.name = name;
         this.position = position;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public GeoPosition getPosition() {
+        return position;
+    }
+
+    public void setPosition(GeoPosition position) {
+        this.position = position;
+    }
+
+    @Override
+    public String toString() {
+        return "CityInfo{" +
+                "name='" + name + '\'' +
+                ", position=" + position +
+                '}';
+    }
 }
