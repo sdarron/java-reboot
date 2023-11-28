@@ -4,8 +4,9 @@ import java.util.List;
 
 
 /**
- * Hello world!
- *
+ * Проект для домашнего задания #5 Школы Java разработчиков
+ * @author Зайцев Денис Николевич
+ * @version 1.0
  */
 public class App
 {

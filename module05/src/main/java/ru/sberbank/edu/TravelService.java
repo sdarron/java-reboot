@@ -1,13 +1,8 @@
 package ru.sberbank.edu;
 
-import javax.xml.stream.Location;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
 
 /**
  * Travel Service.

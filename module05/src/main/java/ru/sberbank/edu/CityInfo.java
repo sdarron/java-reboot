@@ -42,4 +42,20 @@ public class CityInfo {
                 ", position=" + position +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof CityInfo cityInfo)) return false;
+
+        if (getName() != null ? !getName().equals(cityInfo.getName().toUpperCase()) : cityInfo.getName().toUpperCase() != null) return false;
+        return getPosition() != null ? getPosition().equals(cityInfo.getPosition()) : cityInfo.getPosition() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getName() != null ? getName().hashCode() : 0;
+        result = 31 * result + (getPosition() != null ? getPosition().hashCode() : 0);
+        return result;
+    }
 }
