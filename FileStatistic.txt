@@ -1,1 +1,0 @@
-File name: test.txt; max line: test test test test; count space: 5; count line: 3

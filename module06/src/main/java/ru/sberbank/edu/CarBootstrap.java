@@ -11,8 +11,15 @@ import ru.sberbank.edu.service.CarServiceImpl;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
+/**
+ * Проект для домашнего задания #6 Школы Java разработчиков
+ * @author Зайцев Денис Николевич
+ * @version 1.0
+ */
+
 public class CarBootstrap {
     public static void main(String[] args) throws Exception {
+
         Server server = Server.createTcpServer(args).start();
         H2DbEmbedded.initDb();
 
@@ -21,11 +28,18 @@ public class CarBootstrap {
             CarService carService = new CarServiceImpl(carRepository);
 
             carService.addCar("777", "Lada");
+            carService.addCar("888", "Kia");
+            carService.addCar("555", "Haval");
+            carService.addCar("444", "Moskvich");
 
             // Test check start
+            carService.deleteCar("555");
+            carService.editModel("444", "UAZ");
+
             String readAllCarsSql = "SELECT * FROM car";
             Statement statement = H2DbEmbedded.getConnection().createStatement();
             ResultSet resultSet = statement.executeQuery(readAllCarsSql);
+
 
             while (resultSet.next()) {
                 String id = resultSet.getString(1);
