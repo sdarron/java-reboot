@@ -33,7 +33,7 @@ public class WeatherProvider {
      * @return weather info or null
      */
     public WeatherInfo get(String city) throws IOException {
-        RestTemplate restTemplate = new RestTemplate();
+        restTemplate = new RestTemplate();
         WeatherInfo weatherInfo = new WeatherInfo();
 
         String resourceUrl
