@@ -1,5 +1,9 @@
 package ru.sberbank.edu;
 
+import java.io.IOException;
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -14,7 +18,8 @@ public class WeatherCache {
     /**
      * Default constructor.
      */
-    public WeatherCache() {
+    public WeatherCache(WeatherProvider weatherProvider) {
+        this.weatherProvider = weatherProvider;
     }
 
     /**
@@ -26,15 +31,18 @@ public class WeatherCache {
      * @param city - city
      * @return actual weather info
      */
-    public WeatherInfo getWeatherInfo(String city) {
-        // should be implemented
-        return null;
+    public synchronized WeatherInfo getWeatherInfo(String city) throws IOException {
+        WeatherInfo weatherInfo = cache.get(city);
+        if (weatherInfo == null || Duration.between(weatherInfo.getExpiryTime(), LocalDateTime.now(ZoneId.of("UTC"))).getSeconds() > 300 ) {
+            cache.put(city, weatherProvider.get(city));
+        }
+        return cache.get(city);
     }
 
     /**
      * Remove weather info from cache.
      **/
-    public void removeWeatherInfo(String city) {
-        // should be implemented
+    public synchronized void removeWeatherInfo(String city) throws IOException {
+        cache.remove(city);
     }
 }

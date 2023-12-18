@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  width: 500px;
+  margin: 20px auto;
+}
+
+/* list styles */
+
+img {
+    width:100%; /* Ширина */
+    background: #f0f0f0; /* Цвет фона */
+    border-radius: 5px; /* Радиус скругления */
+    margin-bottom: 5%;
+}
+
+h1 {
+    color: #555;
+    font: 40pt helvetica, arial, sans-serif;
+    margin-bottom: 5%;
+}
+p{
+    color: #555;
+    font: 10pt helvetica, arial, sans-serif;
+}
+
+ul {
+    color: #ccc;
+}
+ul li {
+  font: bold 24pt helvetica, arial, sans-serif;
+  position: relative;
+  margin-bottom: 10px;
+}
+li p {
+  font: 12pt helvetica, arial, sans-serif;
+  color: #555;
+}
+span {
+  position: absolute;
+  line-height: 25px;
+}
+
+footer {
+  color: #555;
+  font:  14pt helvetica, arial, sans-serif;
+  margin-bottom: 2%;
+  text-align: center;
+  border-top: 1px solid black;
+  padding-top: 5px;
+ }
+#info-id{
+  color: #555;
+  font: 12pt helvetica, arial, sans-serif;
+  margin-bottom: 5%;
+}
+#list-id{
+  color: #555;
+  font: 12pt helvetica, arial, sans-serif;
+  list-style: none;
+  margin-bottom: 5%;
+}
+#variant-in{
+   border: 1px solid black;
+   padding-right: 0px;
+   padding-top: 0px;
+   padding-bottom: 0px;
+   padding-left: 50px;
+   width: 50%;
+   border-radius: 5px;
+   margin-bottom: 10%;
+}
+
+.tech_title-id{
+  color: #555;
+  font: 16pt helvetica, arial, sans-serif;
+  margin-bottom: 2%;
+}
+
+
+
+
