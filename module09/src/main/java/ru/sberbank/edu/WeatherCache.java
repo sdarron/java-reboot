@@ -1,5 +1,7 @@
 package ru.sberbank.edu;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import java.io.IOException;
 import java.time.Duration;
 import java.time.LocalDateTime;
@@ -18,6 +20,8 @@ public class WeatherCache {
     /**
      * Default constructor.
      */
+
+    @Autowired
     public WeatherCache(WeatherProvider weatherProvider) {
         this.weatherProvider = weatherProvider;
     }
