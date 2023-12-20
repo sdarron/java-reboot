@@ -1,4 +1,4 @@
-package ru.edu;
+package ru.sberbank.edu;
 
 import static java.lang.Math.round;
 

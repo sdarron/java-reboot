@@ -1,4 +1,4 @@
-package ru.edu;
+package ru.sberbank.edu;
 
 public class FinancialFields {
     private Integer years;

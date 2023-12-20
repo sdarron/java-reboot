@@ -1,4 +1,4 @@
-package ru.edu;
+package ru.sberbank.edu;
 
 import org.apache.catalina.LifecycleException;
 import org.apache.catalina.WebResourceRoot;

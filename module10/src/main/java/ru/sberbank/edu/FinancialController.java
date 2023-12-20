@@ -1,4 +1,4 @@
-package ru.edu;
+package ru.sberbank.edu;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;

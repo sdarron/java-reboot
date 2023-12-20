@@ -1,7 +1,7 @@
-package ru.edu;
+package ru.sberbank.edu;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
-import ru.edu.config.AppConfig;
+import ru.sberbank.edu.config.AppConfig;
 
 public class WebInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
