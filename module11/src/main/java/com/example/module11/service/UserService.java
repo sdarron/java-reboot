@@ -34,6 +34,7 @@ UserService {
         }else {
             throw new RuntimeException("User not find!");
         }
+
     }
 
     public void deleteUser(Long id) {

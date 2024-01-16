@@ -22,4 +22,13 @@ public class SberUser {
         this.name = name;
         this.age = age;
     }
+
+    @Override
+    public String toString() {
+        return "SberUser{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                '}';
+    }
 }
