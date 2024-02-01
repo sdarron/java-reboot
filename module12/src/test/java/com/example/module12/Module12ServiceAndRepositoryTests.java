@@ -45,4 +45,13 @@ public class Module12ServiceAndRepositoryTests {
         assertThat(allUsers.size()).isGreaterThan(0);
     }
 
+    @Test
+    void save() {
+        SberUser user = new SberUser(1L, "Ira", 18);
+
+        when(repository.save(user)).thenReturn(user);
+        SberUser createdUser = service.createUser(user);
+        assertThat(createdUser.getName()).isNotNull();
+    }
+
 }
