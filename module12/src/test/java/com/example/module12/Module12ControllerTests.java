@@ -1,10 +1,8 @@
-package com.example.module11;
+package com.example.module12;
 
-import com.example.module11.controller.UserController;
-import com.example.module11.entity.SberUser;
-import com.example.module11.repository.UserRepository;
-import com.example.module11.service.UserService;
-import org.apache.catalina.connector.Response;
+import ru.edu.module12.controller.UserController;
+import ru.edu.module12.entity.SberUser;
+import ru.edu.module12.service.UserService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -12,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import static org.mockito.Mockito.*;
 
-public class Module11ApplicationTests {
+public class Module12ControllerTests {
 
     @Test
     public void getUsers_whenNoUsersExist_shouldReturnEmptyList() throws Exception {
